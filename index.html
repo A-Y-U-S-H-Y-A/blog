@@ -95,6 +95,7 @@
             var ids = [];
             var src = [];
             var summary = [];
+            var published = [];
             data = data['feed']
             console.log(data)
             if ("entry" in data) {
@@ -107,6 +108,7 @@
                     var e = m.title.$t;
                     var s = m.summary.$t;
                     var li = m.media$thumbnail.url;
+                    var p = m.published.$t.substring(8,10) + '-' + m.published.$t.substring(5,7) + '-' + m.published.$t.substring(0,4);
                     li = li.replace("s72-", "")
                     var k = m.id.$t;
                     k = k.slice(k.lastIndexOf('-') + 1)
@@ -115,6 +117,7 @@
                     s += '....'
                     src.push(li)
                     summary.push(s)
+                    published.push(p)
                 }
             }
             console.log(titles)
@@ -126,12 +129,12 @@
                 if (alt == 0) {
                     alt = 1
                     tobe += '<div class="col-md-4"><img src="' + src[i] + '" class="img-fluid rounded-start" alt="' + titles[i] + '"></div>';
-                    tobe += '<div class="col-md-8"><div class="card-body"><h5 class="card-title">' + titles[i] + '</h5><p class="card-text">' + summary[i] + '</p><p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p></div></div>'
+                    tobe += '<div class="col-md-8"><div class="card-body"><h5 class="card-title">' + titles[i] + '</h5><p class="card-text">' + summary[i] + '</p><p class="card-text"><small class="text-muted"> Published on '+published[i]+'</small></p></div></div>'
                 }
                 else {
                     alt = 0
                     tobe += '<div class="col-md-4 order-md-2"><img src="' + src[i] + '" class="img-fluid rounded-start" alt="' + titles[i] + '"></div>';
-                    tobe += '<div class="col-md-8 order-md-1"><div class="card-body"><h5 class="card-title">' + titles[i] + '</h5><p class="card-text">' + summary[i] + '</p><p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p></div></div>'
+                    tobe += '<div class="col-md-8 order-md-1"><div class="card-body"><h5 class="card-title">' + titles[i] + '</h5><p class="card-text">' + summary[i] + '</p><p class="card-text"><small class="text-muted"> Published on '+published[i]+'</small></p></div></div>'
 
                 }
                 tobe += '</div></div></a>'
