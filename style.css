@@ -183,3 +183,8 @@ transform: translate(-50%, -50%);
   height: 100%;
   width: auto;
 }
+
+#myc{
+  padding-left: 2vw;
+  padding-right: 2vw;
+}
