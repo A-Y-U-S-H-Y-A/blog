@@ -11,26 +11,6 @@ body{
     background-size: cover;
     background-position: center;
 }
-#preloader{
-    width: 100vw;
-    height: 100vh;
-    background-color: rgb(32, 33, 36);
-    position: fixed;
-    z-index: 9;
-    top:0;
-    right: 0;
-    text-align: center;
-    color: white;
-}
-#loader{
-    position: absolute;
-  top: 50%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  /* -webkit-animation: spin 2s linear infinite; */
-  /* animation: spin 2s linear infinite; */
-}
 a {
   color: white;
   text-decoration: none;
@@ -137,6 +117,25 @@ a:hover{
     height: calc(100vh - 50px);
     overflow-y: auto;
   }
+}
+
+#preloader{
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(32, 33, 36);
+  position: fixed;
+  z-index: 9;
+  top:0;
+  right: 0;
+  text-align: center;
+  color: white;
+}
+#loader{
+  position: absolute;
+top: 50%;
+left: 50%;
+-ms-transform: translate(-50%, -50%);
+transform: translate(-50%, -50%);
 }
 
 #square{
